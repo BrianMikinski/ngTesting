@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "target" : "ES6",
+        "module" : "amd",
+        "sourceMap": true,
+        "sourceRoot": "./",
+        "watch": true,
+        "outDir": "wwwroot",
+        "diagnostics": true,
+        "rootDir": "src/"
+    },
+
+    "include": [
+        "src/*"
+    ],
+
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}

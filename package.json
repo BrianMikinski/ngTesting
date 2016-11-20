@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "name": "ngtesting",
+  "author": {
+    "name": "Brian Mikinski",
+    "email": "brian.mikinski@gmail.com"
+  },
+
+  "devDependencies": {
+    
+  }
+}
