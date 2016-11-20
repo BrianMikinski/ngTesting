@@ -1,0 +1,7 @@
+{
+  "name": "ngTesting",
+  "private": true,
+  "dependencies": {
+    "angular": "latest"
+  }
+}

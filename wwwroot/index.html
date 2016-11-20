@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <title>Angular Demo</title>
+    <meta charset="utf-8" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div ng-controller="demoController as vm" class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1> Angular Hello World! <i style="float:right;">{{vm.Message}}</i></h1>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <uib-tabset active="activeJustified" justified="false">
+                    <uib-tab index="0" heading="Admin View">
+                        <div ng-include="'app/example1.html'"></div>
+                    </uib-tab>
+                    <uib-tab index="1" heading="Presentation View">
+                        <div ng-include="'app/example2.html'"></div>
+                    </uib-tab>
+                </uib-tabset>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
