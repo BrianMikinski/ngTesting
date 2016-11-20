@@ -1,7 +1,12 @@
 {
   "name": "ngTesting",
+  "description": "Exploring testing strategies for Angular Applications",
+    "authors": [
+      "Brian Mikinski"
+  ],
   "private": true,
   "dependencies": {
-    "angular": "latest"
+    "angular": "latest",
+    "jasmine": "latest"
   }
 }
