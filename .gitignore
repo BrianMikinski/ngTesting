@@ -4,5 +4,5 @@
 src/*.js
 src/*.js.map
 node_modules
-wwwfoot/*.js
-wwwfoot/*.js.map
+wwwroot/*.js
+wwwroot/*.js.map

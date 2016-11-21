@@ -1,10 +1,4 @@
 {
-      "directory": "app/components/",
-  "timeout": 120000,
-  "registry": {
-    "search": [
-      "http://localhost:8000",
-      "https://bower.herokuapp.com"
-    ]
-  }
+  "directory": "components/",
+  "timeout": 120000
 }
