@@ -1,0 +1,24 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch ngTesting",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost/index.html",
+            "port":9222,
+            "sourceMaps": true,
+            "webRoot": "${workspaceRoot}\\wwwroot"
+        },
+        {
+            "name": "Attach ngTesting to Chrome, with sourcemaps.",
+            "type": "chrome",
+            "request": "attach",
+            "port": 9222,
+            "webRoot": "${workspaceRoot}"
+        }
+        //Chrome debuggin by performing the following
+        //Add a path variable to "C:\Program Files (x86)\Google\Chrome\Application" or the location of chrome
+        //chrome.exe --remote-debugging-port=9222
+    ]
+}
