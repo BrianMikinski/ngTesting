@@ -6,3 +6,4 @@ src/*.js.map
 node_modules
 wwwroot/*.js
 wwwroot/*.js.map
+components
