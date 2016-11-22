@@ -11,5 +11,8 @@
     "gulp":"latest",
     "typescript": "latest",
     "typings": "latest"
-  }
+  },
+  "scripts": {
+    "tsc" : "tsc"
+    }
 }
