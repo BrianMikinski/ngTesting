@@ -4,5 +4,5 @@
     "isShellCommand": true,
     "args": ["${workspaceRoot}\\node_modules\\typescript\\bin\\tsc", "-p", "." ], //"${workspaceRoot}}..." is the location of the local TypeScript compiler
     "showOutput": "always",
-    "problemMatcher": "$tsc"
+    "problemMatcher": "$tsc"//,
 }

@@ -3,6 +3,7 @@
         //1. Add a path variable to "C:\Program Files (x86)\Google\Chrome\Application" or the location of chrome
         //2. chrome.exe --remote-debugging-port=9222
         //3. Run ctrl+F5 from the vs code project
+        //4. You must setup node.js to publish static files. Essentially setup a server for hosting files.
         //TODO: Add gulp build task to start chrome.exe
     "version": "0.2.0",
     "configurations": [
@@ -13,15 +14,8 @@
             "url": "http://localhost:9222/wwwroot/index.html",
             "port":9222,
             "sourceMaps": true,
-            "webRoot": "${workspaceRoot}/wwwroot"
-        },
-        {
-            "name": "Attach ngTesting to Chrome, with sourcemaps.",
-            "type": "chrome",
-            "request": "attach",
-            "port": 9222,
-            "webRoot": "${workspaceRoot}/wwwroot"
+            "webRoot": "${workspaceRoot}",
+            "diagnosticLogging": true
         }
-    ]
-    
+    ] 
 }
