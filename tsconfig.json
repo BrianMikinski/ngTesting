@@ -3,15 +3,18 @@
         "target" : "ES6",
         "module" : "amd",
         "sourceMap": true,
-        "sourceRoot": "./",
+        "sourceRoot": "src/scripts",
         "watch": true,
         "outDir": "wwwroot/scripts",
         "diagnostics": true,
-        "rootDir": "src/"
+        "rootDir": "src/scripts"
     },
+    "compileOnSave": false,
 
-    "include": [
-        "src/*"
+    "filesGlob": [
+        "src/**/*",
+        "!typings/**",
+        "!node_modules/**"
     ],
 
     "exclude": [
