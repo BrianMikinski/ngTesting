@@ -1,8 +1,17 @@
 {
     "version": "0.1.0",
-    "command": "node", //Compiling TypeScript files from local version of TypeScript
+    "command": "gulp", //Compiling TypeScript via Gulp
     "isShellCommand": true,
-    "args": ["${workspaceRoot}\\node_modules\\typescript\\bin\\tsc", "-p", "." ], //"${workspaceRoot}}..." is the location of the local TypeScript compiler
+    "options": {
+        "cwd": "${workspaceRoot}\\node_modules\\.bin\\"
+    },
+    "tasks": [
+        {
+            "taskName": "build:compileTypeScript",
+            "isBuildCommand": true
+        }
+    ],
+    
     "showOutput": "always",
-    "problemMatcher": "$tsc"//,
+    "echoCommand": true
 }

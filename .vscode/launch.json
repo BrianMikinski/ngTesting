@@ -26,5 +26,5 @@
             "webRoot": "${workspaceRoot}/wwwroot",
             "url":"http://localhost:8080"
         }
-    ] 
+    ]
 }
