@@ -1,12 +1,14 @@
 {
   "name": "ngTesting",
   "description": "Exploring testing strategies for Angular Applications",
-    "authors": [
-      "Brian Mikinski"
+  "authors": [
+    "Brian Mikinski"
   ],
   "private": true,
   "dependencies": {
-    "angular": "latest",
-    "jasmine": "latest"
+    "angular": "^1.4.0",
+    "jasmine": "latest",
+    "angular-route": "^1.4.0",
+    "bootstrap": "~3.3.7"
   }
 }

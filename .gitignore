@@ -6,3 +6,4 @@ node_modules
 wwwroot/*.js
 wwwroot/*.js.map
 components
+bower_components
