@@ -12,8 +12,6 @@
             "type": "chrome",
             "request": "launch",
             "url": "http://localhost:8080/wwwroot/index.html",
-            // "address": "localhost",
-            // "port":9222,
             "sourceMaps": true,
             "webRoot": "${workspaceRoot}/wwwroot",
             "diagnosticLogging": true

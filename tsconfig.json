@@ -5,7 +5,7 @@
         "sourceMap": true,
         "sourceRoot": "./",
         "watch": true,
-        "outDir": "wwwroot",
+        "outDir": "wwwroot/scripts",
         "diagnostics": true,
         "rootDir": "src/"
     },
