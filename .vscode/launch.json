@@ -11,12 +11,22 @@
             "name": "Launch ngTesting",
             "type": "chrome",
             "request": "launch",
-            "url": "http://localhost:9222/wwwroot/index.html",
-            "address": "localhost",
-            "port":9222,
+            "url": "http://localhost:8080/wwwroot/index.html",
+            // "address": "localhost",
+            // "port":9222,
             "sourceMaps": true,
             "webRoot": "${workspaceRoot}/wwwroot",
             "diagnosticLogging": true
+        },
+        {
+            "name": "Attach",
+            "type": "chrome",
+            "request": "attach",
+            "port":9222,
+            "sourceMaps": true,
+            "diagnosticLogging": true,
+            "webRoot": "${workspaceRoot}/wwwroot",
+            "url":"http://localhost:8080"
         }
     ] 
 }
