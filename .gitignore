@@ -7,3 +7,7 @@ wwwroot/*.js
 wwwroot/*.js.map
 components
 bower_components
+wwwroot/scripts
+wwwroot/fonts
+wwwroot/styles
+wwwroot/lib

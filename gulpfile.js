@@ -6,10 +6,10 @@
 /**
  * Load required npm packages
  */
-var gulp = require("gulp"),
-            ts = require("gulp-typescript"),
-            sourceMaps = require("gulp-sourcemaps"),
-            del = require("del");
+var gulp = require("gulp");
+var ts = require("gulp-typescript");
+var sourceMaps = require("gulp-sourcemaps");
+var del = require("del");
 
 /**
  *  Configure paths
@@ -17,29 +17,32 @@ var gulp = require("gulp"),
 var paths = {
     scripts: {
         compile:{
-            input: "src/**/*.ts",
-            output:"wwwroot/",
+            input: "src/scripts/**/*.ts",
+            output:"wwwroot/scripts",
             config: "tsconfig.json"
         }
     }
 };
 
+/**
+ * Setup the Gulp TypeScript Compilation
+ */
 var tsProject = ts.createProject(paths.scripts.compile.config,
                 {
                     typescript: require("typescript")
                 });
 
 /**
- * Clean 
+ * Clean TypeScript
  */
-gulp.task("cleanTypeScript", function(){
+gulp.task("clean:TypeScript", function(){
     return del([ paths.scripts.compile.output + "Scripts/**/*"])
 });
 
 /**
  * Compile TypeScript
  */
-gulp.task('compileTypeScript', ['cleanTypeScript'], function(){
+gulp.task('build:compileTypeScript', ['clean:TypeScript'], function(){
 
     return gulp.src(paths.scripts.compile.input)
             .pipe(sourceMaps.init())
