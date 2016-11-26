@@ -1,10 +1,10 @@
-/// <reference path="../../../typings/index.d.ts"/>
+/// <reference path="../../typings/index.d.ts"/>
 
 /**
  * Demo for unit testing with jasmine
  */
 
 
-// describe('Test Jasmine Unit test', () =>{
+describe('Test Jasmine Unit test', () =>{
 
-// });
+});

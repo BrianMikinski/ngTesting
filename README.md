@@ -36,3 +36,11 @@ node_modules\.bin\typings search bootstrap
 
 Install Typings
 node_modules\.bin\typings install dt~bootstrap --save --global
+
+
+=================================
+        npm remve unused packages
+=================================
+Use the following command to remove unused node packages
+
+npm prune
