@@ -10,6 +10,7 @@ var gulp = require("gulp");
 var ts = require("gulp-typescript");
 var sourceMaps = require("gulp-sourcemaps");
 var del = require("del");
+var karmaServer = require("karma").Server;
 
 /**
  *  Configure paths
@@ -21,7 +22,8 @@ var paths = {
             output:"wwwroot/scripts",
             config: "tsconfig.json"
         }
-    }
+    },
+    karma: "karma.conf.js"
 };
 
 /**
@@ -57,4 +59,14 @@ gulp.task("build:compileTypeScript", ["clean:TypeScript"], function() {
 */
 gulp.task("watch", function() {
     gulp.watch(paths.scripts.compile.input,["build:compileTypeScript"]); //No callback
+});
+
+/**
+ * Run test once and exit
+ */
+gulp.task("test", function (done) {
+  new karmaServer({
+    configFile:  __dirname + "/conf/karma.conf.js",
+    singleRun: true
+  }, done).start();
 });
