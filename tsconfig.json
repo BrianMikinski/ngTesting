@@ -4,11 +4,18 @@
         "module" : "amd",
         "sourceMap": true,
         "sourceRoot": "src/scripts",
+        "noImplicitAny": true,
+        "removeComments": false,
+        "emitDecoratorMetadata": true,
         "watch": false,
         "outDir": "wwwroot/scripts",
         "diagnostics": true,
-        "rootDir": "src/scripts"
+        "rootDir": "src/scripts",
+        "typeRoots": [
+            "/typings/**/*"
+        ]
     },
+    
     "compileOnSave": false,
 
     "filesGlob": [
