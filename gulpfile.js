@@ -35,19 +35,26 @@ var tsProject = ts.createProject(paths.scripts.compile.config,
 /**
  * Clean TypeScript
  */
-gulp.task("clean:TypeScript", function(){
+gulp.task("clean:TypeScript", function() {
     return del([ paths.scripts.compile.output + "Scripts/**/*"])
 });
 
 /**
  * Compile TypeScript
  */
-gulp.task('build:compileTypeScript', ['clean:TypeScript'], function(){
+gulp.task("build:compileTypeScript", ["clean:TypeScript"], function() {
 
     return gulp.src(paths.scripts.compile.input)
             .pipe(sourceMaps.init())
             .pipe(tsProject())
             .js
-            .pipe(sourceMaps.write('.'))
+            .pipe(sourceMaps.write("."))
             .pipe(gulp.dest(paths.scripts.compile.output))
+});
+
+/**
+ * Add a watch to compile scripts
+*/
+gulp.task("watch", function() {
+    gulp.watch(paths.scripts.compile.input,["build:compileTypeScript"]); //No callback
 });

@@ -1,6 +1,6 @@
 {
     "version": "0.1.0",
-    "command": "gulp", //Compiling TypeScript via Gulp
+    "command": "gulp", //Compiling TypeScript via Gulp if we do not have the watch already setup
     "isShellCommand": true,
     "options": {
         "cwd": "${workspaceRoot}\\node_modules\\.bin\\"
