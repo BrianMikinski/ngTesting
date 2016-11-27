@@ -18,6 +18,12 @@ describe("Test Jasmine Unit test", function() {
         let message = "hello world";
 
         expect(message).toMatch("hello world");
+        expect(message).not.toMatch("test");
     });
+
+    it('Test Number 3', () => {
+        expect(7).toEqual(7);
+        expect(9).not.toEqual(8);
+    })
 
 });
