@@ -24,6 +24,10 @@ describe("Test Jasmine Unit test", function() {
     it('Test Number 3', () => {
         expect(7).toEqual(7);
         expect(9).not.toEqual(8);
-    })
+    });
+
+    it('Test Number 4', () => {
+        expect(9).toEqual(9);
+    });
 
 });

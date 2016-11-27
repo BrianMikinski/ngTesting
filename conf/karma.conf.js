@@ -4,6 +4,8 @@
 module.exports = function (config) {
   const configuration = {
     basePath: "../src",
+    logLevel: "INFO", //Use "DEBUG" to troubleshoot problems
+
     frameworks: [
       "jasmine",
       "karma-typescript"],
@@ -14,18 +16,25 @@ module.exports = function (config) {
     preprocessors:{
       "./scripts/**/*.ts": ["karma-typescript"]
     },
-    
-    logLevel: "DEBUG",
 
     browsers: [ 
-      //"PhantomJS",
+      //"PhantomJS", //PhantomJS does not support es6. Support is planned for release 2.5
       "Chrome"],
 
     reporters: [
       "progress", 
       "karma-typescript"],
 
-    singleRun: true
+    singleRun: true,
+
+    //We must compile our typescript files prior to running the tests
+    karmaTypescriptConfig: {
+      tsconfig: "../tsconfig.json", //if we need to use the same tsconfig
+      reports: {
+          "html": "coverage",
+          "text-summary": ""
+      }
+    }
   };
 
   config.set(configuration);
