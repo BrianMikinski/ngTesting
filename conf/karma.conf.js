@@ -10,37 +10,43 @@
 module.exports = function (config) {
   const configuration = {
     frameworks: [
-      "jasmine",
-      "karma-typescript" ],
+      "jasmine"
+      // ,
+      // "karma-typescript" 
+      ],
 
     files: [
-      {pattern: "../src/scripts/**/*.ts"}],
+      {pattern: "../src/scripts/**/*.spec.js"}//,
+      // {pattern: "../src/scripts/**/*.js.map"}
+      ],
 
-    preprocessors:{
-      "**/*.ts": ["karma-typescript"]
-    },
+    // preprocessors:{
+    //   "**/*.ts": ["karma-typescript"]
+    // },
 
-    logLevel: "INFO",
+    logLevel: "DEBUG",
 
     browsers: [
-      "PhantomJS",
+      //"PhantomJS",
       "Chrome"],
 
-    reporters: ["progress", 
-    "karma-typescript"],
+    reporters: ["progress"
+    // , 
+    // "karma-typescript"
+    ],
 
-    singleRun: true,
-
-  //   ,
-  // typescriptPreprocessor:{
-  //       options:{
-  //         sourceMap: true,
-  //         noResolve: false
-  //       },
-  //       transformPath: function(path) {
-  //         return path.replace(/\.ts$/, '.js');
-  //       }
-  //   }
+    singleRun: true//,
+          // Uncomment below if you want the default html
+      // coverage report + a summary on the console
+      
+      // karmaTypescriptConfig: {
+      //     reports:
+      //     {
+      //         "html": "coverage",
+      //         "text-summary": "" // destination "" will redirect output to the console
+      //     }
+      // },
+        
   };
 
   config.set(configuration);

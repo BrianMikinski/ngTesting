@@ -68,5 +68,9 @@ gulp.task("test", function (done) {
   new karmaServer({
     configFile:  __dirname + "/conf/karma.conf.js",
     singleRun: true
-  }, done).start();
+  }, 
+  function(){
+       //error = error ? new Error('Karma returned with the error code: ' + error) : undefined;
+    done();
+  }).start();
 });
