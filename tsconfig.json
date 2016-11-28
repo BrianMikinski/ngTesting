@@ -1,6 +1,13 @@
 {
+    // https://www.typescriptlang.org/docs/handbook/compiler-options.html
     "compilerOptions": {
         "target" : "ES6",
+        /**
+        * Module resolution for code generation. Different from "moduleResolution" which is
+        * which is how d.ts definition files are picked up. "module" resolution specifies
+        * which style of module resolution will be used with generated code files.
+        * See compiler-options.html for full details
+        */
         "module" : "amd",
         "sourceMap": true,
         "sourceRoot": "src/scripts",
@@ -13,8 +20,23 @@
         "diagnostics": true,
         "rootDir": "src/scripts",
         "typeRoots": [
-            "./typings/**/*.d.ts"
-        ]
+            "node_modules/@types"
+            //,"typings" //Can add additional locations for locating type roots
+        ],
+        /**
+         * If we do not not want to include a full path as is found in "typeRoots"
+         * then we can use the following option to only include listed definitions.
+         */
+        // "types": [
+        //     "angular"
+        // ]
+
+        /**
+         * This is required to gain intellisense for imported packages and
+         * the "node" value must be spcified.
+         * See https://github.com/Microsoft/TypeScript/issues/9725 or https://github.com/Microsoft/TypeScript/issues/9831
+         */
+        "moduleResolution": "node"
     },
     
     "compileOnSave": false,

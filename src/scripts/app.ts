@@ -1,12 +1,18 @@
-/// <reference path="../../typings/index.d.ts"/>
-
 /**
  * Demo app for unit testing angular and typescript modules
  */
 
-var app = angular.module('app', []);
+//import * as angular from '@types/angular'
 
-//Main controller for the page
+let testingVar:string = "hello world";
+
+let testAgain:ng.IScope;
+
+let testMaybe: ng.IRootScopeService;
+
+//let testingTest: ng.
+
+var app = angular.module('app', []);
 
 //static $inject = ["$scope", "$document"];
 app.controller("demoController", function () {
@@ -16,3 +22,5 @@ app.controller("demoController", function () {
     vm.Message = "Hello World";
 
 });
+
+let numberTest: number = 5;

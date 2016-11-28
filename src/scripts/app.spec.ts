@@ -1,5 +1,3 @@
-/// <reference path="../../typings/index.d.ts"/>
-
 /**
  * Demo for unit testing with jasmine
  */

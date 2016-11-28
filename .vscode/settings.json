@@ -1,3 +1,4 @@
 {
-    "typescript.check.workspaceVersion": true
+    "typescript.check.workspaceVersion": true,
+    "typescript.tsdk": "node_modules/typescript/lib" //Set vs code to use local version of compiler
 }
