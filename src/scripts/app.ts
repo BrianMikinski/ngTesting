@@ -1,14 +1,18 @@
+/// <reference path="../../typings/index.d.ts"/>
 
-let helloWorldString: string = "hello world";
+/**
+ * Demo app for unit testing angular and typescript modules
+ */
 
-let thisIsATest: string = "test test";
+var app = angular.module('app', []);
 
-let thisIsAnotherTest: string = "Test test";
+//Main controller for the page
 
-let thisIsATesting: string = "Test Test";
+//static $inject = ["$scope", "$document"];
+app.controller("demoController", function () {
 
-let thisMightBeAnother: string = "test test test";
+    var vm: any = this;
+    
+    vm.Message = "Hello World";
 
-let testeringing: number = 77;
-
-let testNumber: number = 2343;
+});

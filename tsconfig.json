@@ -13,7 +13,7 @@
         "diagnostics": true,
         "rootDir": "src/scripts",
         "typeRoots": [
-            "/typings/**/*"
+            "./typings/**/*.d.ts"
         ]
     },
     
