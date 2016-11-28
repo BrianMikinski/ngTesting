@@ -28,8 +28,8 @@
          * then we can use the following option to only include listed definitions.
          */
         // "types": [
-        //     "angular"
-        // ]
+        //     "angular", "jasmine"
+        // ],
 
         /**
          * This is required to gain intellisense for imported packages and
