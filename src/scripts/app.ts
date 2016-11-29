@@ -1,7 +1,7 @@
 /**
- * Demo app for unit testing angular typscript applications
+ * Demo app for unit testing angularjs typscript applications
  * 
- * @author Brian Mikinski - aka TomMikinley on GitHub
+ * @author Brian Mikinski - TomMikinley on GitHub
  * @version 1.0
  * @see README.md for more information on building, testing and the project in general
  */
@@ -12,10 +12,10 @@ var app = angular.module('app', []);
  * Demo Controller
  * Used to demo unit testing angular applications
  */
-app.controller("demoController", function ($scope:ng.IScope, mathService:any, stringService: IStringService) {
+app.controller("demoController", function ($scope: ng.IScope, mathService: IMathService, stringService: IStringService) {
 
     var vm: any = this;
-    
+
     vm.Message = "Hello World";
 
     vm.baseNumber = null;
@@ -26,9 +26,9 @@ app.controller("demoController", function ($scope:ng.IScope, mathService:any, st
     vm.StringTwo = "";
 
     vm.ConcatenatedString = "";
-    
+
     vm.ValueChanged = (): void => {
-        if (vm.baseNumber !== null) {
+        if (vm.baseNumber !== null)  {
             vm.IncrementedValue = mathService.Increment(vm.baseNumber);
             vm.DecrementedValue = mathService.Decrement(vm.baseNumber);
         } else {
@@ -37,30 +37,39 @@ app.controller("demoController", function ($scope:ng.IScope, mathService:any, st
         }
     };
 
-    vm.ConcatenateStrings =  (): void => {
+    vm.ConcatenateStrings = (): void => {
         vm.ConcatenatedString = stringService.Concat(vm.StringOne, vm.StringTwo);
     }
 });
 
+interface IMathService {
+    Increment(baseNumber: number): number;
+    Decrement(baseNumber: number): number;
+}
+
 /**
  * Math Service
- * Used to demo unit testing angular services
+ * 
+ * Used to demo mocking angular services
+ * @interface IMathService
  */
-app.service('mathService', function() {
+class MathService implements IMathService {
+    constructor() { }
 
-    var vm: any = this;
-
-    vm.Increment = function(baseNumber: number):number {
+    Increment(baseNumber: number): number {
         return ++baseNumber;
     }
 
-    vm.Decrement = function(baseNumber: number): number {
+    Decrement(baseNumber: number): number {
         return --baseNumber;
     }
-});
+}
+
+app.service('mathService', MathService);
+
 
 interface IStringService {
-    Concat(firstString:string, secondString:string): string
+    Concat(firstString: string, secondString: string): string
 }
 
 /**
@@ -74,7 +83,7 @@ class StringService implements IStringService {
 
     //static $inject: Array<string> = ['$scope'];
     /// ToDo: Figure out how to do dependency injection
-    constructor() { 
+    constructor() {
         //Do constructor logic here
     }
 
@@ -83,7 +92,7 @@ class StringService implements IStringService {
      * @param firstString The first string to Concatenate
      * @param secondString The second string to concatenate
      */
-    public Concat(firstString:string, secondString:string): string {
+    public Concat(firstString: string, secondString: string): string {
         return firstString + secondString;
     }
 }
