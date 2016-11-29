@@ -5,19 +5,23 @@ Exploring front end build systems and testing with NPM, Bower, Gulp, Jasmine, An
 
 ### npm Startup Server ###
 Run the following command in a terminal window to install all npm requirements and startup the http-server needed
-to server files
+to server files -
 
-npm start
+___npm start___
+
+To clean and remove unnecessary packages use the follow -
+
+___npm prune___
 
 - - - -
 
 ### VS Code - Chrome Debugging Setup ###
 Visual Studio Code Chrome Debugging by performing the following
-1. Run __npm start__
-        1.You must setup node.js to publish static files. "npm start" installs all npm packages and runs the node http-server package.
+1. Run ___npm start___
+   * You must setup node.js to publish static files. "npm start" installs all npm packages and runs the node http-server package.
 2. Add a path variable to __C:\Program Files (x86)\Google\Chrome\Application__ or the location of chrome
-3. Run __chrome.exe --remote-debugging-port=9222__
-4. Run ctrl+F5 from the vs code project
+3. Run ___chrome.exe --remote-debugging-port=9222___
+4. Run ___ctrl+F5___ from the vs code project
 5. TODO: Add gulp build task to start chrome.exe
 
 - - - - 
@@ -25,7 +29,7 @@ Visual Studio Code Chrome Debugging by performing the following
 ### TypeScript Definition Management (.d.ts type definitions) ###
 Type definition management in TypeScript 2.0 is managed with node. __This is different from previous versions of TypeScript.__This
 
-Install definition files using npm install @types/_libraryname_.
+Install definition files using ___npm install @types/libraryname___.
 
 If you are unable to find the type definition you are looking for use the __npm typings__ package.
 
@@ -34,20 +38,13 @@ If you are unable to find the type definition you are looking for use the __npm 
 #### npm typings commands ###
 
 Search for Typings
-__node_modules\.bin\typings search bootstrap__
+___node_modules\.bin\typings search bootstrap___
 
 Install Typings globally for project
-__node_modules\.bin\typings install dt~bootstrap --save --global__
+___node_modules\.bin\typings install dt~bootstrap --save --global___
 
 Search for Typings
 node_modules\.bin\typings search bootstrap
 
 Install Typings
-__node_modules\.bin\typings install dt~bootstrap --save --global__
-
-- - - -
-
-### npm remove unused packages ###
-Use the following command to remove unused node packages
-
-__npm prune__
+___node_modules\.bin\typings install dt~bootstrap --save --global___
