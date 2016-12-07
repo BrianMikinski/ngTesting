@@ -8,39 +8,49 @@
 
 var app = angular.module('app', []);
 
+
+
+interface IDemoController {
+    ValueChanged():void;
+     ConcatenateStrings():void;
+}
+
 /**
  * Demo Controller
  * Used to demo unit testing angular applications
  */
-app.controller("demoController", function ($scope: ng.IScope, mathService: IMathService, stringService: IStringService) {
+class DemoController implements IDemoController {
 
-    var vm: any = this;
+    Message:string  = "Hello World";
 
-    vm.Message = "Hello World";
+    baseNumber: number = null;
+    IncrementedValue: number = null;
+    DecrementedValue: number = null;
 
-    vm.baseNumber = null;
-    vm.IncrementedValue = null;
-    vm.DecrementedValue = null;
+    StringOne: string = "";
+    StringTwo: string = "";
 
-    vm.StringOne = "";
-    vm.StringTwo = "";
+    ConcatenatedString:string  = "";
 
-    vm.ConcatenatedString = "";
+    static $inject: Array<string> = ['$scope', 'mathService', 'stringService'];
+    constructor(private $scope: ng.IScope, private mathService: IMathService, private stringService: IStringService){ }
 
-    vm.ValueChanged = (): void => {
-        if (vm.baseNumber !== null)  {
-            vm.IncrementedValue = mathService.Increment(vm.baseNumber);
-            vm.DecrementedValue = mathService.Decrement(vm.baseNumber);
+    ValueChanged():void {
+        if (this.baseNumber !== null)  {
+            this.IncrementedValue = this.mathService.Increment(this.baseNumber);
+            this.DecrementedValue = this.mathService.Decrement(this.baseNumber);
         } else {
-            vm.IncrementedValue = null;
-            vm.DecrementedValue = null;
+            this.IncrementedValue = null;
+            this.DecrementedValue = null;
         }
     };
 
-    vm.ConcatenateStrings = (): void => {
-        vm.ConcatenatedString = stringService.Concat(vm.StringOne, vm.StringTwo);
+     ConcatenateStrings():void {
+        this.ConcatenatedString = this.stringService.Concat(this.StringOne, this.StringTwo);
     }
-});
+}
+
+app.controller('demoController', DemoController);
 
 interface IMathService {
     Increment(baseNumber: number): number;
@@ -67,7 +77,6 @@ class MathService implements IMathService {
 
 app.service('mathService', MathService);
 
-
 interface IStringService {
     Concat(firstString: string, secondString: string): string
 }
@@ -80,12 +89,9 @@ interface IStringService {
  * @interface IStringService
  */
 class StringService implements IStringService {
-
-    //static $inject: Array<string> = ['$scope'];
-    /// ToDo: Figure out how to do dependency injection
-    constructor() {
-        //Do constructor logic here
-    }
+   
+    static $inject: Array<string> = ['$http'];
+    constructor( private $http: ng.IHttpService ) { }
 
     /**
      * Concatenate two stringService
