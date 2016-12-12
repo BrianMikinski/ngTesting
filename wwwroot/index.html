@@ -1,16 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="app">
-
+<html lang="en">
 <head>
     <title>Angular Testing/Visual Studio Code Demo</title>
     <meta charset="utf-8" />
     <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 </head>
-
 <body>
-    <script src="../bower_components/angular/angular.min.js"></script>
-    <script src="../bower_components/angular-messages/angular-messages.min.js"></script>
-    <script src="./scripts/app.js"></script>
     <div class="container" ng-controller="demoController as vm">
         <div class="row">
             <div class="col-md-12">
@@ -92,7 +87,12 @@
             </div>
         </div>
     </div>
-    </div>
+
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-route/angular-route.min.js"></script>
+    <!--<script src="../bower_components/angular-messages/angular-messages.min.js"></script>-->
+    <!--<script src="./scripts/app.js"></script>-->
+    <script data-main="scripts/main" src="../bower_components/requirejs/require.js"></script>
 </body>
 
 </html>

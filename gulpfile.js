@@ -38,7 +38,7 @@ var tsProject = ts.createProject(paths.scripts.compile.config,
  * Clean TypeScript
  */
 gulp.task("clean:TypeScript", function() {
-    return del([ paths.scripts.compile.output + "Scripts/**/*"])
+    return del([ paths.scripts.compile.output + "**/*"])
 });
 
 /**
