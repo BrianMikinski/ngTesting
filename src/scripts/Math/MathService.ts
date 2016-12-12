@@ -1,6 +1,6 @@
 
 import {IMathService} from "./IMathService";
-import * as angular from "angular";
+// import * as angular from "angular";
 
 /**
  * Math Service
@@ -19,5 +19,3 @@ export class MathService implements IMathService {
         return --baseNumber;
     }
 }
-
-angular.module("app").service('mathService', MathService);

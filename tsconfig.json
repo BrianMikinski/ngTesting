@@ -28,7 +28,7 @@
          * then we can use the following option to only include listed definitions.
          */
         // "types": [
-        //     "angular", "jasmine"
+        //     "angular", "jasmine", "angular-mocks", "requirejs"
         // ],
 
         /**
@@ -38,6 +38,10 @@
          */
         "moduleResolution": "node"
     },
+
+    // "typeAcquisition": {
+    //     "enable": true
+    // },
     
     "compileOnSave": false,
     "filesGlob": [

@@ -1,5 +1,5 @@
 import {IStringService} from "./IStringService";
-import * as angular from "angular";
+// import * as angular from "angular";
 
 /**
  * String Service
@@ -17,5 +17,3 @@ export class StringService implements IStringService {
         return firstString + secondString;
     }
 }
-
-angular.module("app").service("stringService", StringService);

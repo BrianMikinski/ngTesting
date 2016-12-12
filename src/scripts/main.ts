@@ -4,11 +4,13 @@ require.config({
 
     paths: {
         appModule: "app",
-        demo: "./Demo/DemoController"
+        demo: "./Demo/DemoController",
+        stringService: "./String/StringService",
+        mathService: "./Math/mathService"
     }
 });
 
-require(["app"],
+require(["appModule", "demo", "stringService", "mathService"],
     function() {
         angular.bootstrap(document, ["app"]);
     }

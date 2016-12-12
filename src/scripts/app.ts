@@ -7,6 +7,22 @@
  */
 
 import {DemoController} from "./Demo/DemoController";
-import * as angular from "angular";
+import {MathService} from "./Math/MathService";
+import {StringService} from "./String/StringService";
+
+//import * as angular from "angular";
+
+//Hackish fix for getting around global module definitions vs
+//local module definitions
+import * as __angular  from "angular";
+
+declare global {
+  const angular: typeof __angular;
+}
 
 var app = angular.module('app', ['ngRoute']);
+
+app.controller('demoController', DemoController);
+
+app.service("stringService", StringService);
+app.service('mathService', MathService);

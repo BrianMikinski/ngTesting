@@ -1,7 +1,7 @@
 import {IDemoController} from "./IDemoController";
 import {IMathService} from "../Math/IMathService";
 import {IStringService} from "../String/IStringService";
-import * as angular from "angular";
+// import * as angular from "angular";
 
 /**
  * Demo Controller
@@ -41,7 +41,3 @@ export class DemoController implements IDemoController {
         return 23;
     }
 }
-
-angular.module("app").controller('demoController', DemoController);
-
-//app.controller('demoController', DemoController);
