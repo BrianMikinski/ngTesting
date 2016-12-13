@@ -8,20 +8,25 @@ module.exports = function (config) {
 
     frameworks: [
       "jasmine",
-      "karma-typescript",
       "requirejs"], //Required for TypeScript module loading
 
     files: [
-      { pattern: "./scripts/**/*.spec.ts" },
-      { pattern: "./scripts/**/*.ts"},
-      { pattern: "../bower_components/angular/angular.min.js", included: false }, //You will get the famous "...cannot find module "angular"
-      { pattern: "../bower_components/angular-mocks/angular-mocks.js", included: false },
-      { pattern: "../bower_components/angular-messages/angular-messages.js", included: false },
-      { pattern: "../bower_components/requirejs/require.js", included: true },
-      { pattern: "../wwwroot/scripts/main.specs.js", included: true}],
+      { pattern: "../wwwroot/scripts/main.specs.js", included: false },
+      { pattern: "../bower_components/requirejs/require.js", included: false },
+      { pattern: "./scripts/**/*.ts", included: false },
+      { pattern: "./scripts/**/*.spec.ts" }],
+
+    //{ pattern: "../bower_components/angular/angular.min.js", included: false },  //You will get the famous "...cannot find module "angular"
+    //{ pattern: "../bower_components/angular-mocks/angular-mocks.js", included: false },
+    //{ pattern: "../bower_components/angular-messages/angular-messages.js", included: false },
+
+    //,
+
+    exclude: [
+      "../wwwroot/scripts/main.js"],
 
     preprocessors: {
-      "./scripts/**/*.ts": ["karma-typescript"]
+      "./scripts/**/*.ts": ["typescript"]
     },
 
     browsers: [
@@ -35,13 +40,29 @@ module.exports = function (config) {
     singleRun: true,
 
     //We must compile our typescript files prior to running the tests
-    karmaTypescriptConfig: {
-      tsconfig: "../tsconfig.json", //if we need to use the same tsconfig
-      reports: {
-        "html": "coverage",
-        "text-summary": ""
-      }
-    },
+    // karmaTypescriptConfig: {
+    //   tsconfig: "../tsconfig.json", //if we need to use the same tsconfig
+    //   reports: {
+    //     "html": "coverage",
+    //     "text-summary": ""
+    //   }
+    // },
+
+    typescriptPreprocessor: {
+      //tsconfig: "../tsconfig.json",
+      // transforming the filenames
+      options: {
+        sourceMap: true,
+        target: "ES6",
+        module: "amd",
+        noImplicityAny: true,
+        concatenateOutput: false
+      },
+      transformPath: function (path) {
+        return path.replace(/\.ts$/, '.js');
+      },
+    }
+
   };
 
   config.set(configuration);

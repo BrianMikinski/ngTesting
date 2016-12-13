@@ -1,6 +1,4 @@
 //We have to import angular and the mocks libraries to test
-import * as angular from "angular";
-import * as mocks from "angular-mocks/ngMock";
 
 import {IDemoController} from "./Demo/IDemoController";
 import {IMathService} from "./Math/IMathService";

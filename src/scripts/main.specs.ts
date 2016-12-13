@@ -1,16 +1,19 @@
-// //Configuring the AMD requirejs module loader
+//Configuring the AMD requirejs module loader
 require.config({
-    baseUrl: "./",
+    baseUrl: "./scripts", //Base bath where you can find all modules
 
-    // paths: {
-    //     app:"app",
-    //     appTests:"app.spec"
-    // }
+    paths: {
+        appModule: "app",
+        demo: "./Demo/DemoController",
+        stringService: "./String/StringService",
+        mathService: "./Math/MathService"
+    }
 });
 
-require(["app", 
-         "appTests"],
-    function(){
-        angular.bootstrap(document,["app"]);
-    }
+require(["appModule", "demo", "stringService", "mathService"]
+
+// ,
+//     function() {
+//         angular.bootstrap(document, ["app"]);
+//     }
 );

@@ -20,7 +20,7 @@
         "diagnostics": true,
         "rootDir": "src/scripts",
         "typeRoots": [
-            "node_modules/@types"
+            "./node_modules/@types"
             //,"typings" //Can add additional locations for locating type roots
         ],
         /**

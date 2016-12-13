@@ -6,7 +6,7 @@ require.config({
         appModule: "app",
         demo: "./Demo/DemoController",
         stringService: "./String/StringService",
-        mathService: "./Math/mathService"
+        mathService: "./Math/MathService"
     }
 });
 
