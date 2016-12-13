@@ -11,16 +11,16 @@ module.exports = function (config) {
       "requirejs"], //Required for TypeScript module loading
 
     files: [
-      { pattern: "../wwwroot/scripts/main.specs.js", included: false },
-      { pattern: "../bower_components/requirejs/require.js", included: false },
+      
+      //{ pattern: "../bower_components/requirejs/require.js", included: false },
+      { pattern: "./scripts/*.ts", included: false},
+       "../wwwroot/scripts/main.specs.js",
       { pattern: "./scripts/**/*.ts", included: false },
-      { pattern: "./scripts/**/*.spec.ts" }],
+      { pattern: "./scripts/**/*.spec.ts", included:false }],
 
     //{ pattern: "../bower_components/angular/angular.min.js", included: false },  //You will get the famous "...cannot find module "angular"
     //{ pattern: "../bower_components/angular-mocks/angular-mocks.js", included: false },
     //{ pattern: "../bower_components/angular-messages/angular-messages.js", included: false },
-
-    //,
 
     exclude: [
       "../wwwroot/scripts/main.js"],
