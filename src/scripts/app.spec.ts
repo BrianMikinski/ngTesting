@@ -5,7 +5,6 @@ import { IMathService } from "./Math/IMathService";
 import { MathService } from "./Math/MathService";
 import { IStringService } from "./String/IStringService";
 import { StringService } from "./String/StringService";
-import * from "../app";
 
 /**
  * Demo for unit testing with jasmine
