@@ -1,7 +1,6 @@
 import {IDemoController} from "./IDemoController";
 import {IMathService} from "../Math/IMathService";
 import {IStringService} from "../String/IStringService";
-// import * as angular from "angular";
 
 /**
  * Demo Controller

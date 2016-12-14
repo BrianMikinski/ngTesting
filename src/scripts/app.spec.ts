@@ -11,29 +11,27 @@ import { StringService } from "./String/StringService";
  */
 describe("Test Jasmine Unit test", function () {
 
-    let demoControllerTest: IMathService = new MathService();
-    demoControllerTest = null;
-    // beforeEach(angular.mock.module("app"));
+    beforeEach(angular.mock.module("app"));
 
-    // let DemoController: IDemoController, scope: ng.IScope;
-    // let mathService: IMathService, stringService: IStringService;
+    let DemoController: IDemoController, scope: ng.IScope;
+    let mathService: IMathService, stringService: IStringService;
 
-    // let testTest: string = "hello world";
+    let testTest: string = "hello world";
 
-    // beforeEach(inject(($controller: ng.IControllerService, $rootScope: ng.IRootScopeService) => {
+    beforeEach(inject(($controller: ng.IControllerService, $rootScope: ng.IRootScopeService) => {
 
-    //     scope = $rootScope.$new();
-    //     DemoController = <IDemoController>$controller('DemoController,', {
-    //         $scope: scope,
-    //         mathService: new MathService(),
-    //         stringService: new StringService()
-    //     })
+        scope = $rootScope.$new();
+        DemoController = <IDemoController>$controller('DemoController,', {
+            $scope: scope,
+            mathService: new MathService(),
+            stringService: new StringService()
+        })
 
-    // }));
+    }));
 
-    // it('Test Demo Controller Integer Test', () => {
-    //     expect(23).toEqual(DemoController.TestIntegerValue());
-    // })
+    it('Test Demo Controller Integer Test', () => {
+        expect(23).toEqual(DemoController.TestIntegerValue());
+    })
 
     it('Test Number 1', () => {
         expect(true).toEqual(true);

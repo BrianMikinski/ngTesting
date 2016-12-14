@@ -3,40 +3,35 @@
  */
 module.exports = function (config) {
   const configuration = {
-    basePath: "../wwwroot/scripts/",
+    basePath: "../wwwroot/scripts/", //This is the default path where you are able to find all specification files
     logLevel: "DEBUG", //Use "DEBUG" to troubleshoot problems,
-    browserNoActivityTimeout: 50000,
+    browserNoActivityTimeout: 10000,
 
     frameworks: [
       "jasmine"//,
       /*"requirejs"*/], //Required for TypeScript module loading
 
+    // When using a module loader such as requirejs, the order of the files matters.
+    // You also must be certain to only include a file once - i.e.
+    // you cannot load a module using requirejs as well as include
+    // it using the pattern matcher or specifically specified.
     files: [
 
-      "../../bower_components/angular/angular.min.js",
-      "../../bower_components/angular-mocks/angular-mocks.min.js",
+      //Do not use minified versions of libraries here. They will fail
+      "../../bower_components/angular/angular.js", 
+      "../../bower_components/angular-mocks/angular-mocks.js",
       "../../bower_components/requirejs/require.js",
       '../../node_modules/karma-requirejs/lib/adapter.js',
-
-      //{pattern: "../bower_components/requirejs/require.js", included: true},
-      // { pattern: "../../src/scripts/*.ts", included: false },
-      // { pattern: "../../src/scripts/**/*.ts", included: false },
-      // { pattern: "./../src/scripts/**/*.spec.ts", included:false },
 
       { pattern: "*.js", included: false },
       { pattern: "**/*.js", included: false },
       { pattern: "**/*.spec.js", included: false },
       { pattern: "*.spec.js", included: false },
-      //"",
-      //{ pattern: "*.spec.js", included: false },
-      "main.specs.js"],
-
-    //{ pattern: "../bower_components/angular/angular.min.js", included: false },  //You will get the famous "...cannot find module "angular"
-    //{ pattern: "../bower_components/angular-mocks/angular-mocks.js", included: false },
-    //{ pattern: "../bower_components/angular-messages/angular-messages.js", included: false },
+      "main.specs.js"], // requirejs main file.
 
     exclude: [ 
-      "main.js"],
+      "main.js" // you always want to exclude the app main.js
+      ],
 
     // preprocessors: {
     //   "../../src/scripts/*.ts": ["typescript"]
@@ -45,14 +40,12 @@ module.exports = function (config) {
     browsers: [
       //"PhantomJS", //PhantomJS does not support es6. Support is planned for release 2.5
       "Chrome"],
-      //autoWatch: true,
 
     // reporters: [
     //   "progress",
     //   "karma-typescript"],
 
-    //singleRun: false,
-
+    singleRun: true,
 
     //We must compile our typescript files prior to running the tests
     // karmaTypescriptConfig: {
