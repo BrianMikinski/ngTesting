@@ -10,7 +10,7 @@ import {DemoController} from "./Demo/DemoController";
 import {MathService} from "./Math/MathService";
 import {StringService} from "./String/StringService";
 
-//Hackish fix for getting around global module definitions vs
+//Hackish fix for getting around global module definitions
 //local module definitions
 import * as __angular  from "angular";
 

@@ -5,6 +5,7 @@ import { IMathService } from "./Math/IMathService";
 import { MathService } from "./Math/MathService";
 import { IStringService } from "./String/IStringService";
 import { StringService } from "./String/StringService";
+import * from "../app";
 
 /**
  * Demo for unit testing with jasmine
@@ -20,18 +21,18 @@ describe("Test Jasmine Unit test", function () {
 
     beforeEach(inject(($controller: ng.IControllerService, $rootScope: ng.IRootScopeService) => {
 
-        scope = $rootScope.$new();
-        DemoController = <IDemoController>$controller('DemoController,', {
-            $scope: scope,
-            mathService: new MathService(),
-            stringService: new StringService()
-        })
+        // scope = $rootScope.$new();
+        // DemoController = <IDemoController>$controller('DemoController,', {
+        //     $scope: scope,
+        //     mathService: new MathService(),
+        //     stringService: new StringService()
+        // })
 
     }));
 
-    it('Test Demo Controller Integer Test', () => {
-        expect(23).toEqual(DemoController.TestIntegerValue());
-    })
+    // it('Test Demo Controller Integer Test', () => {
+    //     expect(23).toEqual(DemoController.TestIntegerValue());
+    // })
 
     it('Test Number 1', () => {
         expect(true).toEqual(true);
@@ -49,13 +50,17 @@ describe("Test Jasmine Unit test", function () {
         expect(message).not.toMatch("test");
     });
 
-    it('Test Number 3', () => {
+    it('Test number 3', () => {
         expect(7).toEqual(7);
         expect(9).not.toEqual(8);
     });
 
-    it('Test Number 4', () => {
+    it('Test number 4', () => {
         expect(9).toEqual(9);
     });
+
+    it('Test number 6', () => {
+         expect(9).toEqual(9);
+    })
 
 });

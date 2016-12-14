@@ -3,13 +3,12 @@
  */
 module.exports = function (config) {
   const configuration = {
-    basePath: "../wwwroot/scripts/", //This is the default path where you are able to find all specification files
-    logLevel: "DEBUG", //Use "DEBUG" to troubleshoot problems,
+    basePath: "../wwwroot/scripts/", //This is the default path where you are able to find all spec files
+    logLevel: "DEBUG", //Use "DEBUG" for troubleshooting
     browserNoActivityTimeout: 10000,
 
     frameworks: [
-      "jasmine"//,
-      /*"requirejs"*/], //Required for TypeScript module loading
+      "jasmine"], //Do not use karma-requirejs plugin framework
 
     // When using a module loader such as requirejs, the order of the files matters.
     // You also must be certain to only include a file once - i.e.
