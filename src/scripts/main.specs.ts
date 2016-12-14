@@ -1,19 +1,30 @@
-//Configuring the AMD requirejs module loader
-require.config({
-    baseUrl: "/wwwroot/scripts", //Base bath where you can find all modules
+var allTestFiles: any = [];
+var TEST_REGEXP = /(spec|test)\.js$/i;
 
-    paths: {
-        appModule: "app",
-        demo: "./Demo/DemoController",
-        stringService: "./String/StringService",
-        mathService: "./Math/MathService"
+var pathToModule = function (path: any) {
+    return path.replace(/^\/base\//, '').replace(/\.js$/, '');
+};
+
+Object.keys((<any>window).__karma__.files).forEach(function (file) {
+    if (TEST_REGEXP.test(file)) {
+        // normalize paths to RequireJS module names.
+        allTestFiles.push(pathToModule(file));
     }
 });
 
-require(["appModule", "demo", "stringService", "mathService"]
+// configuring the AMD requirejs module loader
+require.config({
+    // baseUrl: "../wwwroot/scripts/", //Base bath where you can find all modules
+    baseUrl: "/base",
+    paths: {
+        appModule: "app",
+        demo: "Demo/DemoController",
+        stringService: "String/StringService",
+        mathService: "Math/MathService"
+    },
+    // dynamically load all test files
+    deps: allTestFiles,
 
-// ,
-//     function() {
-//         angular.bootstrap(document, ["app"]);
-//     }
-);
+    // we have to kickoff jasmine, as it is asynchronous
+    callback: (<any>window).__karma__.start
+});
