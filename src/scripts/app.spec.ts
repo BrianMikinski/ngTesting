@@ -1,4 +1,4 @@
-//We have to import angular and the mocks libraries to test
+// we have to import angular and the mocks libraries to test
 
 import { IDemoController } from "./Demo/IDemoController";
 import { IMathService } from "./Math/IMathService";
@@ -9,7 +9,7 @@ import { StringService } from "./String/StringService";
 /**
  * Demo for unit testing with jasmine
  */
-describe("Test Jasmine Unit test", function () {
+describe("Test Jasmine Unit test", function ():void {
 
     beforeEach(angular.mock.module("app"));
 
@@ -33,32 +33,32 @@ describe("Test Jasmine Unit test", function () {
     //     expect(23).toEqual(DemoController.TestIntegerValue());
     // })
 
-    it('Test Number 1', () => {
+    it("Test Number 1", () => {
         expect(true).toEqual(true);
     });
 
-    it('Test Number 2', () => {
+    it("Test Number 2", () => {
         expect(4).not.toBe(5);
     });
 
-    it('Match Pattern', () => {
+    it("Match Pattern", () => {
 
-        let message = "hello world";
+        let message:string = "hello world";
 
         expect(message).toMatch("hello world");
         expect(message).not.toMatch("test");
     });
 
-    it('Test number 3', () => {
+    it("Test number 3", () => {
         expect(7).toEqual(7);
         expect(9).not.toEqual(8);
     });
 
-    it('Test number 4', () => {
+    it("Test number 4", () => {
         expect(9).toEqual(9);
     });
 
-    it('Test number 6', () => {
+    it("Test number 6", () => {
          expect(9).toEqual(9);
     })
 

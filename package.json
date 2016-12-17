@@ -34,6 +34,7 @@
     "karma-typescript": "^2.1.4",
     "karma-typescript-preprocessor": "^0.3.0",
     "requirejs": "^2.3.2",
+    "tslint": "^4.1.1",
     "typescript": "^2.1.4"
   },
   "scripts": {

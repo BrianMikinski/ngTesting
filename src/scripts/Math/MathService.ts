@@ -9,8 +9,6 @@ import {IMathService} from "./IMathService";
  * @interface IMathService
  */
 export class MathService implements IMathService {
-    constructor() { }
-
     Increment(baseNumber: number): number {
         return ++baseNumber;
     }

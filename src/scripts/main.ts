@@ -1,6 +1,6 @@
-//Configuring the AMD requirejs module loader
+// configuring the AMD requirejs module loader
 require.config({
-    baseUrl: "./scripts", //Base bath where you can find all modules
+    baseUrl: "./scripts", // base bath where you can find all modules
 
     paths: {
         appModule: "app",

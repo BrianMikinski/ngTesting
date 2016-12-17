@@ -1,5 +1,4 @@
 import {IStringService} from "./IStringService";
-// import * as angular from "angular";
 
 /**
  * String Service

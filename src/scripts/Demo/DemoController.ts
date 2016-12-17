@@ -19,7 +19,7 @@ export class DemoController implements IDemoController {
 
     ConcatenatedString: string = "";
 
-    static $inject: Array<string> = ['$scope', 'mathService', 'stringService'];
+    static $inject: Array<string> = ["$scope", "mathService", "stringService"];
     constructor(private $scope: ng.IScope, private mathService: IMathService, private stringService: IStringService) { }
 
     ValueChanged(): void {
