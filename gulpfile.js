@@ -64,7 +64,7 @@ gulp.task("watch", function() {
 /**
  * Run test once and exit
  */
-gulp.task("test", function (done) {
+gulp.task("test", ["build:compileTypeScript"], function (done) {
   new karmaServer({
     configFile:  __dirname + "/conf/karma.conf.js",
     singleRun: true

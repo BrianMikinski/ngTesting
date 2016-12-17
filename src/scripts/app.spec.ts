@@ -5,11 +5,12 @@ import { IMathService } from "./Math/IMathService";
 import { MathService } from "./Math/MathService";
 import { IStringService } from "./String/IStringService";
 import { StringService } from "./String/StringService";
+import app from "./app";
 
 /**
  * Demo for unit testing with jasmine
  */
-describe("Test Jasmine Unit test", function ():void {
+describe(`${app.name}: Test Jasmine Unit test`, function ():void {
 
     beforeEach(angular.mock.module("app"));
 

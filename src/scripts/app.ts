@@ -18,9 +18,14 @@ declare global {
   const angular: typeof __angular;
 }
 
-var app = angular.module("app", ["ngRoute"]);
-
+/**
+ * Main module for the application. We are exporting
+ * the module so that it can be used in unit tests;
+ */
+let app:ng.IModule = angular.module("app", ["ngRoute"]);
 app.controller("demoController", DemoController);
 
 app.service("stringService", StringService);
 app.service("mathService", MathService);
+
+export default app;

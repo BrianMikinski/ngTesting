@@ -3,8 +3,8 @@
  */
 module.exports = function (config) {
   const configuration = {
-    basePath: "../wwwroot/scripts/", //This is the default path where you are able to find all spec files
-    logLevel: "DEBUG", //Use "DEBUG" for troubleshooting
+    basePath: "../wwwroot/scripts/", // this is the default path where you are able to find all spec files
+    logLevel: "DEBUG", //use "DEBUG" for troubleshooting
     browserNoActivityTimeout: 10000,
 
     frameworks: [
@@ -16,12 +16,13 @@ module.exports = function (config) {
     // it using the pattern matcher or specifically specified.
     files: [
 
-      //Do not use minified versions of libraries here. They will fail
-      "../../bower_components/angular/angular.js", 
+      // do not use minified versions of libraries here. They will fail
+      "../../bower_components/angular/angular.js",
+      "../../bower_components/angular-route/angular-route.js",
       "../../bower_components/angular-mocks/angular-mocks.js",
       "../../bower_components/requirejs/require.js",
       '../../node_modules/karma-requirejs/lib/adapter.js',
-
+      {pattern: "app.js", included: false},
       { pattern: "*.js", included: false },
       { pattern: "**/*.js", included: false },
       { pattern: "**/*.spec.js", included: false },
