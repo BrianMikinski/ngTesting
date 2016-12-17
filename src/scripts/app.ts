@@ -28,4 +28,5 @@ app.controller("demoController", DemoController);
 app.service("stringService", StringService);
 app.service("mathService", MathService);
 
+// export the default app modules so that we can reference it in unit tests
 export default app;
