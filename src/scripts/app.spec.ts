@@ -60,6 +60,5 @@ describe("Test Jasmine Unit test", function ():void {
 
     it("Test number 6", () => {
          expect(9).toEqual(9);
-    })
-
+    });
 });

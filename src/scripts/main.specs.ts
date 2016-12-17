@@ -1,11 +1,11 @@
 var allTestFiles: any = [];
 var TEST_REGEXP:any = /(spec|test)\.js$/i;
 
-var pathToModule = function (path: any):any {
+var pathToModule = function (path:any):any {
     return path.replace(/^\/base\//, "").replace(/\.js$/, "");
 };
 
-Object.keys((<any>window).__karma__.files).forEach(function (file:any):void {
+Object.keys((<any>window).__karma__.files).forEach(function (file):void {
     if (TEST_REGEXP.test(file)) {
         // normalize paths to RequireJS module names.
         allTestFiles.push(pathToModule(file));
