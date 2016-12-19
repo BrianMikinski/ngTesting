@@ -23,7 +23,7 @@ declare global {
  * the module so that it can be used in unit tests;
  */
 let app:ng.IModule = angular.module("app", ["ngRoute"]);
-app.controller("demoController", DemoController);
+app.controller("DemoController", DemoController);
 
 app.service("stringService", StringService);
 app.service("mathService", MathService);

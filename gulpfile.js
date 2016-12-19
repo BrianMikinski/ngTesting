@@ -20,6 +20,7 @@ var paths = {
         compile:{
             input: "src/scripts/**/*.ts",
             output:"wwwroot/scripts",
+            tests: "wwwrootTests/",
             config: "tsconfig.json"
         }
     },
@@ -29,8 +30,7 @@ var paths = {
 /**
  * Setup the Gulp TypeScript Compilation
  */
-var tsProject = ts.createProject(paths.scripts.compile.config,
-                {
+var tsProject = ts.createProject(paths.scripts.compile.config, {
                     typescript: require("typescript")
                 });
 
@@ -65,12 +65,12 @@ gulp.task("watch", function() {
  * Run test once and exit
  */
 gulp.task("test", ["build:compileTypeScript"], function (done) {
+
   new karmaServer({
     configFile:  __dirname + "/conf/karma.conf.js",
     singleRun: true
-  }, 
-  function(){
-       //error = error ? new Error('Karma returned with the error code: ' + error) : undefined;
+  }, function(){
+       // error = error ? new Error('Karma returned with the error code: ' + error) : undefined;
     done();
   }).start();
 });

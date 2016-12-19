@@ -11,4 +11,5 @@ wwwroot/scripts
 wwwroot/fonts
 wwwroot/styles
 wwwroot/lib
+testCoverage/
 typings/

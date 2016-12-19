@@ -1,10 +1,12 @@
+'use strict';
+
 /**
  * gulp.js task configuration file for the karma test runner
  */
 module.exports = function (config) {
   const configuration = {
     basePath: "../wwwroot/scripts/", // this is the default path where you are able to find all spec files
-    logLevel: "DEBUG", //use "DEBUG" for troubleshooting
+    logLevel: "INFO", //use "DEBUG" for troubleshooting
     browserNoActivityTimeout: 10000,
 
     frameworks: [
@@ -16,7 +18,7 @@ module.exports = function (config) {
     // it using the pattern matcher or specifically specified.
     files: [
 
-      // do not use minified versions of libraries here. They will fail
+      // do not use minified versions of libraries here. They will fail the test. 
       "../../bower_components/angular/angular.js",
       "../../bower_components/angular-route/angular-route.js",
       "../../bower_components/angular-mocks/angular-mocks.js",
@@ -27,50 +29,32 @@ module.exports = function (config) {
       { pattern: "**/*.js", included: false },
       { pattern: "**/*.spec.js", included: false },
       { pattern: "*.spec.js", included: false },
-      "main.specs.js"], // requirejs main file.
+      { pattern: '**/*.js.map', included: false},
+      "main.specs.js"], // requirejs main file. This file computes module dependencies for the application
 
-    exclude: [ 
-      "main.js" // you always want to exclude the app main.js
-      ],
-
-    // preprocessors: {
-    //   "../../src/scripts/*.ts": ["typescript"]
-    // },
+    exclude: [ "main.js" ] , // you always want to exclude the app main.js
 
     browsers: [
       //"PhantomJS", //PhantomJS does not support es6. Support is planned for release 2.5
-      "Chrome"],
+      "Chrome",
+      "IE",
+      "Firefox"],
 
-    // reporters: [
-    //   "progress",
-    //   "karma-typescript"],
+    reporters: [
+      "progress",
+      "coverage"],
 
-    singleRun: true,
+    preprocessors: {
+       "*.js": ['coverage'],
+      "**/*.js": ['coverage']
+    },
 
-    //We must compile our typescript files prior to running the tests
-    // karmaTypescriptConfig: {
-    //   tsconfig: "../tsconfig.json", //if we need to use the same tsconfig
-    //   reports: {
-    //     "html": "coverage",
-    //     "text-summary": ""
-    //   }
-    // },
+    coverageReporter: {
+      type :"html",
+      dir : "../../testCoverage"
+    },
 
-    // typescriptPreprocessor: {
-    //   //tsconfig: "../tsconfig.json",
-    //   // transforming the filenames
-    //   options: {
-    //     sourceMap: true,
-    //     target: "ES6",
-    //     module: "amd",
-    //     noImplicityAny: true,
-    //     concatenateOutput: false
-    //   },
-    //   transformPath: function (path) {
-    //     return path.replace(/\.ts$/, '.js');
-    //   },
-    // }
-
+    singleRun: false,
   };
 
   config.set(configuration);
