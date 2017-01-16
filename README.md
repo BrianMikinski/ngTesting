@@ -1,5 +1,5 @@
-# npm Bower, Gulp, Jasmine, Angular, Unit Testing, e2e Testing #
-Exploring front end build systems and testing with NPM, Bower, Gulp, Jasmine, Angular
+# Angular Testing with npm, Bower, Gulp and Jasmine #
+Exploring front end build systems, unit testing and e2e testing in angular with npm, Bower, Gulp, Jasmine
 
 - - - - 
 
