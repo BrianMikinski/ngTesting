@@ -27,8 +27,7 @@ Visual Studio Code Chrome Debugging by performing the following
 - - - - 
 
 ### TypeScript Definition Management (.d.ts type definitions) ###
-Type definition management in TypeScript 2.0 is managed with node. __This is different from previous versions of TypeScript.__This
-
+Type definition management in TypeScript 2.0 is managed with node. This is different from previous versions of TypeScript.
 Install definition files using ___npm install @types/libraryname___.
 
 If you are unable to find the type definition you are looking for use the __npm typings__ package.
@@ -36,6 +35,7 @@ If you are unable to find the type definition you are looking for use the __npm 
 - - - - 
 
 #### npm typings commands ###
+For most libraries this npm module is not needed and vanilla ___npm @types/library___ name can be used. If that is not the case the following commands can be used with the npm typings module.
 
 Search for Typings
 ___node_modules\.bin\typings search bootstrap___
