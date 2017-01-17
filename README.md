@@ -34,7 +34,7 @@ If you are unable to find the type definition you are looking for use the __npm 
 
 - - - - 
 
-#### npm typings commands ###
+### npm typings commands ##
 For most libraries this npm module is not needed and vanilla ___npm @types/library___ name can be used. If that is not the case the following commands can be used with the npm typings module.
 
 Search for Typings
