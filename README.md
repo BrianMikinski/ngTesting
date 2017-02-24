@@ -18,6 +18,8 @@ Use the following commands to build, test and run the project. It is usually bes
     * Tests can be run using the gulp task __test__
     * To run karma test scripts in gulp, open a Visual Studio Code terminal and run the following command from the source root
     * __node_modules\.bin\gulp test__
+    * Note: Tests are set to run in PhantomJs, Chrome and Firefox. If any of these browsers are not installed, Karma will hang until until they
+    are not found. This can take ~30s or so
 
 3. Run/Host
     * Run the following command in a terminal window to install all npm requirements and startup the http-server needed to server files
