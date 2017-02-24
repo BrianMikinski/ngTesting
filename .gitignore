@@ -12,4 +12,5 @@ wwwroot/fonts
 wwwroot/styles
 wwwroot/lib
 testCoverage/
+testResults/
 typings/

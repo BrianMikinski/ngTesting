@@ -15,7 +15,8 @@ module.exports = function (config) {
       "karma-junit-reporter",
       "karma-coverage",
       "karma-chrome-launcher",
-      "karma-firefox-launcher"],
+      "karma-firefox-launcher",
+      "karma-edge-launcher"],
 
     frameworks: [
       "jasmine"], //Do not use karma-requirejs plugin framework
@@ -45,8 +46,9 @@ module.exports = function (config) {
     browsers: [
       //"PhantomJS", //PhantomJS does not support es6. Support is planned for release 2.5
       "Chrome",
-      //"IE",
-      "Firefox"],
+      //"IE", cannot use IE because it does not accept string interpolaction ` ${varname} this is a test of string interpolation`
+      "Firefox",
+      "Edge"],
 
     reporters: [
       "junit",
@@ -54,7 +56,9 @@ module.exports = function (config) {
       "coverage"],
 
     junitReporter:{
-      outputFile: "test-results.xml"
+      outputDir:"../../testResults/JunitReports",
+      outputFile: "test-results.xml",
+      userBrowserName: true
     },
 
     preprocessors: {
@@ -64,7 +68,7 @@ module.exports = function (config) {
 
     coverageReporter: {
       type :"html",
-      dir : "../../testCoverage"
+      dir : "../../testResults/Coverage"
     },
 
     singleRun: false,

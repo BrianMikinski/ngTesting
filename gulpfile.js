@@ -22,7 +22,8 @@ var paths = {
             output:"wwwroot/scripts",
             tests: "wwwrootTests/",
             config: "tsconfig.json"
-        }
+        },
+    testResults: "testResults"
     },
     karma: "karma.conf.js"
 };
@@ -38,7 +39,7 @@ var tsProject = ts.createProject(paths.scripts.compile.config, {
  * Clean TypeScript
  */
 gulp.task("clean:TypeScript", function() {
-    return del([ paths.scripts.compile.output + "**/*"])
+    return del([ paths.scripts.compile.output + "**/*", paths.testResults + "**/*"])
 });
 
 /**
