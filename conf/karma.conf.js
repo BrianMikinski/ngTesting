@@ -9,6 +9,14 @@ module.exports = function (config) {
     logLevel: "INFO", //use "DEBUG" for troubleshooting
     browserNoActivityTimeout: 10000,
 
+    plugins: [
+      "karma-phantomjs-launcher",
+      "karma-jasmine",
+      "karma-junit-reporter",
+      "karma-coverage",
+      "karma-chrome-launcher",
+      "karma-firefox-launcher"],
+
     frameworks: [
       "jasmine"], //Do not use karma-requirejs plugin framework
 
@@ -41,8 +49,13 @@ module.exports = function (config) {
       "Firefox"],
 
     reporters: [
+      "junit",
       "progress",
       "coverage"],
+
+    junitReporter:{
+      outputFile: "test-results.xml"
+    },
 
     preprocessors: {
        "*.js": ['coverage'],
