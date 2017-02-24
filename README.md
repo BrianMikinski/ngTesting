@@ -23,6 +23,7 @@ Use the following commands to build, test and run the project. It is usually bes
     * __node_modules\.bin\gulp test__
     * Note: Tests are set to run in PhantomJs, Chrome and Firefox. If any of these browsers are not installed, Karma will hang until until they
     are not found. This can take ~30s or so
+    * Test results and code coverage can be viewed with in VSTS
 
 3. Run/Host
     * Run the following command in a terminal window to install all npm requirements and startup the http-server needed to server files
