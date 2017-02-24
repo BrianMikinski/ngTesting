@@ -16,7 +16,8 @@ module.exports = function (config) {
       "karma-coverage",
       "karma-chrome-launcher",
       "karma-firefox-launcher",
-      "karma-edge-launcher"],
+      "karma-edge-launcher",
+      "karma-ie-launcher"],
 
     frameworks: [
       "jasmine"], //Do not use karma-requirejs plugin framework
