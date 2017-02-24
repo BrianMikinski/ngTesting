@@ -37,7 +37,7 @@ module.exports = function (config) {
     browsers: [
       //"PhantomJS", //PhantomJS does not support es6. Support is planned for release 2.5
       "Chrome",
-      "IE",
+      //"IE",
       "Firefox"],
 
     reporters: [
