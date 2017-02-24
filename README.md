@@ -1,8 +1,11 @@
-# Angular Testing with npm, Bower, Gulp and Jasmine
+# ngTesting ![build](https://brianmikinski.visualstudio.com/_apis/public/build/definitions/7ed81cbf-a6e0-4ace-98a2-7856142c333f/2/badge)
+
+## Testing AngularJs web apps with npm, Bower, Gulp and Jasmine
 
 Exploring front development with unit testing and e2e testing in angular with npm, Bower, Gulp, Jasmine
+## Build Status 
 
-## Build and Setup
+## Getting Started
 
 Suggested editor for repo is __Visual Studio Code__.
 Use the following commands to build, test and run the project. It is usually best to open a separate terminal window in the source root.
@@ -64,3 +67,7 @@ node_modules\.bin\typings search bootstrap
 
 Install Typings
 ___node_modules\.bin\typings install dt~bootstrap --save --global___
+
+## Protractor Integration Tests
+
+Coming soon...
