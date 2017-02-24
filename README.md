@@ -3,7 +3,7 @@
 ## Testing AngularJs web apps with npm, Bower, Gulp and Jasmine
 
 Exploring front development with unit testing and e2e testing in angular with npm, Bower, Gulp, Jasmine
-## Build Status 
+
 
 ## Getting Started
 
