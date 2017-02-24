@@ -1,7 +1,7 @@
 {
     // https://www.typescriptlang.org/docs/handbook/compiler-options.html
     "compilerOptions": {
-        "target" : "ES6",
+        "target" : "ES5", // IE and PhantomJs do not support ES6
         /**
         * Module resolution for code generation. Different from "moduleResolution" which is
         * which is how d.ts definition files are picked up. "module" resolution specifies

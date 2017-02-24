@@ -43,10 +43,11 @@ module.exports = function (config) {
 
     exclude: [ "main.js" ] , // you always want to exclude the app main.js
 
+    // We can test PhantomJs and IE if we downgrade our EcmaScript target from es6 to es5
     browsers: [
-      //"PhantomJS", //PhantomJS does not support es6. Support is planned for release 2.5
+      "PhantomJS", //PhantomJS does not support es6. Support is planned for release 2.5
       "Chrome",
-      //"IE", cannot use IE because it does not accept string interpolaction ` ${varname} this is a test of string interpolation`
+      "IE", //cannot use IE because it does not accept string interpolaction ` ${varname} this is a test of string interpolation`
       "Firefox",
       "Edge"],
 
