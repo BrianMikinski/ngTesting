@@ -1,5 +1,5 @@
 {
     "typescript.check.workspaceVersion": true,
-    "typescript.tsdk": "node_modules/typescript/lib",
-    "vsicons.presets.angular": true //Set vs code to use local version of compiler
+    "typescript.tsdk": "node_modules/typescript/lib", //Set vs code to use local version of compiler
+    "vsicons.presets.angular": true 
 }

@@ -39,7 +39,7 @@
     "karma-requirejs": "^1.1.0",
     "requirejs": "^2.3.2",
     "tslint": "^4.1.1",
-    "typescript": "^2.1.4"
+    "typescript": "^2.2.1"
   },
   "scripts": {
     "prestart": "npm install",
