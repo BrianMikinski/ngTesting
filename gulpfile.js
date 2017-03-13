@@ -20,32 +20,48 @@ var paths = {
         compile:{
             input: "src/scripts/**/*.ts",
             output:"wwwroot/scripts",
-            tests: "wwwrootTests/",
+            outputTests: "wwwrootTest/scripts",
             config: "tsconfig.json"
         },
     testResults: "testResults"
     },
-    karma: "karma.conf.js"
+    karma: "karma.conf.js",
+    html:{
+        input: "src/**/*.html",
+    },
+    wwwroot: "wwwroot",
+    wwwrootTest: "wwwrootTest"
 };
 
 /**
  * Setup the Gulp TypeScript Compilation
  */
 var tsProject = ts.createProject(paths.scripts.compile.config, {
-                    typescript: require("typescript")
-                });
+    typescript: require("typescript")
+});
 
 /**
  * Clean TypeScript
  */
 gulp.task("clean:TypeScript", function() {
-    return del([ paths.scripts.compile.output + "**/*", paths.testResults + "**/*"])
+    return del([ paths.wwwroot + "**/*",
+                paths.testResults + "**/*",
+                paths.wwwrootTest + "**/*" ])
+});
+
+/**
+ * Copy HTML to source folder
+ */
+gulp.task("copy:html", function() {
+    return gulp.src(paths.html.input)
+                .pipe(gulp.dest(paths.wwwroot))
+                .pipe(gulp.dest(paths.wwwrootTest));
 });
 
 /**
  * Compile TypeScript
  */
-gulp.task("build:compileTypeScript", ["clean:TypeScript"], function() {
+gulp.task("build:compileTypeScript", ["copy:html"], function() {
 
     return gulp.src(paths.scripts.compile.input)
             .pipe(sourceMaps.init())
@@ -53,6 +69,7 @@ gulp.task("build:compileTypeScript", ["clean:TypeScript"], function() {
             .js
             .pipe(sourceMaps.write("."))
             .pipe(gulp.dest(paths.scripts.compile.output))
+            .pipe(gulp.dest(paths.scripts.compile.outputTests));
 });
 
 /**

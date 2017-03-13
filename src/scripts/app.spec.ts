@@ -39,6 +39,7 @@ describe(`Module "${app.name}": Unit Tests`, function (): void {
 
         // act
         DemoController.ConcatenateStrings();
+        
         // assert
         expect((<any>DemoController).ConcatenatedString).toEqual("testnewtest");
     });

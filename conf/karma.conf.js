@@ -5,7 +5,7 @@
  */
 module.exports = function (config) {
   const configuration = {
-    basePath: "../wwwroot/scripts/", // this is the default path where you are able to find all spec files
+    basePath: "../wwwrootTest/scripts/", // this is the default path where you are able to find all spec files
     logLevel: "INFO", //use "DEBUG" for troubleshooting
     browserNoActivityTimeout: 10000,
 
