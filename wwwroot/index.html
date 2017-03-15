@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Angular Testing/Visual Studio Code Demo</title>
+    <meta charset="utf-8" />
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container" ng-controller="DemoController as vm">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Hello World!</h1>
+                <h1> Test Message: {{vm.Message}}
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <h1>
+                    <div class="form-group">
+                        <label> 
+                        Math Service:
+                    </label>
+                        <input type="number" class="form-control" ng-model="vm.baseNumber" ng-change="vm.ValueChanged()" />
+                    </div>
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h1>
+                    <div class="form-group">
+                        <label>
+                        Increment = 
+                    </label>
+                        <input type="text" class="form-control" ng-model="vm.IncrementedValue" readonly>
+                    </div>
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <h1>
+                    <div class="form-group">
+                        <label>
+                        Decrement = 
+                    </label>
+                        <input type="text" class="form-control" ng-model="vm.DecrementedValue" readonly>
+                    </div>
+                </h1>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <h1>String Service: </h1>
+            </div>
+            <div class="col-md-4">
+                <h1>
+                    <div class="form-group">
+                        <label>
+                            String One:
+                        </label>
+                        <input type="text" class="form-control" ng-model="vm.StringOne" ng-change="vm.ConcatenateStrings()" />
+                    </div>
+                </h1>
+            </div>
+            <div class="col-md-4">
+                <h1>
+                    <div class="form-group">
+                        <label>
+                            String Two 
+                        </label>
+                        <input type="text" class="form-control" ng-model="vm.StringTwo" ng-change="vm.ConcatenateStrings()" />
+                    </div>
+                </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>
+                        Concatenated string
+                    </label>
+                    <input type="text" class="form-control" ng-model="vm.ConcatenatedString" readonly/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-route/angular-route.min.js"></script>
+    <script data-main="scripts/main" src="../bower_components/requirejs/require.js"></script>
+</body>
+
+</html>
