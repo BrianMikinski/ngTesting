@@ -48,10 +48,10 @@ module.exports = function (config) {
     // Chrome, IE, Firefox and Edge are not installed on the VSTS build servers and thus will not run there
     browsers: [
       "PhantomJS", //PhantomJS does not support es6. Support is planned for release 2.5
-      //"Chrome",
-      //"IE", //cannot use IE because it does not accept string interpolaction ` ${varname} this is a test of string interpolation`
-      //"Firefox",
-      //"Edge"
+      // "Chrome",
+      // "IE", //cannot use IE because it does not accept string interpolaction ` ${varname} this is a test of string interpolation`
+      // "Firefox",
+      // "Edge"
       ],
 
     reporters: [
